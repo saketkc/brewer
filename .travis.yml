@@ -9,6 +9,7 @@ before_install:
  - brew tap homebrew/science
  - brew tap homebrew/dupes
  - brew install bzip2 coreutils findutils gawk gnu-sed gnu-which grep libpng libxml2 libxslt make readline
+ - brew install git
 
 install:
     - brew install methpipe.rb --HEAD -v
