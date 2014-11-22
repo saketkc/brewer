@@ -6,7 +6,7 @@ before_install:
  - export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
  - export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
  - echo -ne '\n' | ruby -e "$(wget -O- https://raw.github.com/Homebrew/linuxbrew/go/install)"
- - brew tap homebrew/science
+  # - brew tap homebrew/science
    #- brew tap homebrew/dupes
    #- brew install automake bzip2 coreutils findutils gawk gnu-sed gnu-which grep libpng libxml2 libxslt make ncurses readline
 
