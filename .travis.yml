@@ -6,6 +6,7 @@ before_install:
  - export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
  - export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
  - ruby -e "$(wget -O- https://raw.github.com/Homebrew/linuxbrew/go/install)"
+ - brew tap homebrew/science
 install:
  - brew install sratoolkit.rb
 script:
