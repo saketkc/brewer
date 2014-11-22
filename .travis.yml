@@ -8,7 +8,7 @@ before_install:
  - echo -ne '\n' | ruby -e "$(wget -O- https://raw.github.com/Homebrew/linuxbrew/go/install)"
  - brew tap homebrew/science
  - brew tap homebrew/dupes
- - brew install bzip2 coreutils findutils gawk gnu-sed gnu-which grep libpng libxml2 libxslt make ncurses readline
+ - brew install automake bzip2 coreutils findutils gawk gnu-sed gnu-which grep libpng libxml2 libxslt make ncurses readline
 
 install:
     - brew install sratoolkit.rb -v
