@@ -1,14 +1,14 @@
 language: java
 
 before_install:
-    - sudo apt-get -y install build-essential git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev libmagic-dev libmagic
+    - sudo apt-get -y install build-essential git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev libmagic-dev libmagic libhdf5-serial-dev libxml2 libxml2-dev automake
  - export PATH="$HOME/.linuxbrew/bin:$PATH"
  - export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
  - export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
  - echo -ne '\n' | ruby -e "$(wget -O- https://raw.github.com/Homebrew/linuxbrew/go/install)"
  - brew tap homebrew/science
- - brew tap homebrew/dupes
- - brew install automake bzip2 coreutils findutils gawk gnu-sed gnu-which grep libpng libxml2 libxslt make ncurses readline
+   #- brew tap homebrew/dupes
+   #- brew install automake bzip2 coreutils findutils gawk gnu-sed gnu-which grep libpng libxml2 libxslt make ncurses readline
 
 install:
     - brew install sratoolkit.rb -v
