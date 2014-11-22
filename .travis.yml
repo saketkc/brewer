@@ -8,6 +8,6 @@ before_install:
  - echo -ne '\n' | ruby -e "$(wget -O- https://raw.github.com/Homebrew/linuxbrew/go/install)"
  - brew tap homebrew/science
 install:
-    - brew install methpipe.rb --HEAD
+    - brew install methpipe.rb --HEAD -v
 script:
  - fastq-dump
