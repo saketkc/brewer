@@ -11,6 +11,6 @@ before_install:
    #- brew install automake bzip2 coreutils findutils gawk gnu-sed gnu-which grep libpng libxml2 libxslt make ncurses readline
 
 install:
-    - brew install sratoolkit.rb -v
+    - for f in *.rb; do brew install "$f" -v; done
 script:
  - fastq-dump
