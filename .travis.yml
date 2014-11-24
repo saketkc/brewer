@@ -15,8 +15,8 @@ before_install:
  - echo -ne '\n' | ruby -e "$(wget -O- https://raw.github.com/Homebrew/linuxbrew/go/install)"
  - brew tap homebrew/science
  - export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
- #- brew tap homebrew/dupes
-   #- brew install automake bzip2 coreutils findutils gawk gnu-sed gnu-which grep libpng libxml2 libxslt make ncurses readline
+ - brew tap homebrew/dupes
+ - brew install automake bzip2 coreutils make m4 perl
 
 install:
     - for f in *.rb; do brew install "$f" -; done
