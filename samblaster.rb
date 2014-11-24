@@ -2,12 +2,12 @@ require "formula"
 
 class Samblaster < Formula
   homepage "https://github.com/GregoryFaust/samblaster"
+  #doi "10.1093/bioinformatics/btu314"
   #tag "bioinformatics"
   
   url "https://github.com/GregoryFaust/samblaster/releases/download/v.0.1.20/samblaster-v.0.1.20.tar.gz"
   head "https://github.com/GregoryFaust/samblaster"
 
-  #depends_on "gcc" => :build
 
   def install
     system "make"
@@ -15,6 +15,6 @@ class Samblaster < Formula
   end
 
   test do
-    system "#{bin}/samblaster"
+    system "samblaster --version"
   end
 end
