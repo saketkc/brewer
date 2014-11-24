@@ -9,7 +9,7 @@ class Methpipe < Formula
   url "http://smithlabresearch.org/downloads/methpipe-3.3.1.tar.gz"
   sha1 "00dea4a51e7b8ed5e7020bba89db63a91d86a70f"
 
-  depends_on "gsl" => :build
+  depends_on "gsl"
 
   def install
     ENV.deparallelize
