@@ -9,6 +9,7 @@ class Methpipe < Formula
   depends_on "gsl" => :build
 
   def install
+    ENV.deparallelize
     system "make", "all"
     system "make", "install"
     prefix.install 'bin'
