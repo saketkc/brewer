@@ -19,6 +19,6 @@ before_install:
  - brew install automake bzip2 coreutils make m4 perl
 
 install:
-    - for f in *.rb; do brew install "$f" -; done
+    - for f in *.rb; do brew install "$f" -v; done
 script:
     - for f in *.rb; do brew test "$f"; done
