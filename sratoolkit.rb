@@ -17,9 +17,9 @@ class Sratoolkit < Formula
     sha1 "52be99462320f22e9219819177f29446cd8e52d3"
   end
 
-  depends_on "libxml2" #=> :recommended
-  #depends_on "libmagic"# => :recommended
-  depends_on "hdf5" #=> :recommended
+  depends_on "libxml2" => :recommended
+  depends_on "libmagic" => :recommended
+  depends_on "hdf5" => :recommended
   
   def install
     ENV.deparallelize
