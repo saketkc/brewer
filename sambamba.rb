@@ -10,6 +10,7 @@ class Sambamba < Formula
   depends_on "ldc" => :build
 
   def install
+    ENV.deparallelize
     system "make", "sambamba-ldmd2-64"
     bin.install "build/sambamba"
     (libexec/"share").install "BioD/test/data/ex1_header.bam"
