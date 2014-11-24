@@ -19,6 +19,6 @@ before_install:
 
 install:
     #    - for f in *.rb; do brew install "$f" -; done
- - brew install methpipe.rb -v
+ - brew install sambamba.rb -v
 script:
     - for f in *.rb; do brew test "$f"; done
