@@ -12,7 +12,6 @@ class Methpipe < Formula
   depends_on "gsl"
 
   def install
-    ENV.deparallelize
     system "make", "all"
     system "make", "install"
     prefix.install 'bin'
