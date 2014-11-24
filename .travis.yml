@@ -18,6 +18,7 @@ before_install:
    #- brew install automake bzip2 coreutils findutils gawk gnu-sed gnu-which grep libpng libxml2 libxslt make ncurses readline
 
 install:
-    - for f in *.rb; do brew install "$f" -; done
+    #    - for f in *.rb; do brew install "$f" -; done
+ - brew install methpipe.rb -v
 script:
     - for f in *.rb; do brew test "$f"; done
