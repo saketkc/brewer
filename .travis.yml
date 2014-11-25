@@ -15,12 +15,8 @@ before_install:
  - echo -ne '\n' | ruby -e "$(wget -O- https://raw.github.com/Homebrew/linuxbrew/go/install)"
  - brew tap homebrew/science
  - brew tap homebrew/dupes
- #- brew tap homebrew/versions
- - brew install gcc
-   #- brew install automake bzip2 coreutils findutils gawk gnu-sed gnu-which grep libpng libxml2 libxslt make ncurses readline
 
 install:
-    #    - for f in *.rb; do brew install "$f" -; done
  - brew install sambamba.rb -v
 script:
-    - for f in *.rb; do brew test "$f"; done
+ - brew test sambamba.rb
