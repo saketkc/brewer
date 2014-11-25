@@ -1,4 +1,4 @@
 brewer
 ======
 
-Homebrew Personal recipes
+Personal recipes
