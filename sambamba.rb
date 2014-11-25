@@ -3,8 +3,8 @@ require "formula"
 class Sambamba < Formula
   homepage "http://lomereiter.github.io/sambamba"
   #tag "bioinformatics"
-  
-  url "https://github.com/lomereiter/sambamba.git", :tag => "v0.5.0-alpha"
+
+  url "https://github.com/lomereiter/sambamba/archive/v0.5.0-alpha.tar.gz"#, :tag => "v0.5.0-alpha"
   head "https://github.com/lomereiter/sambamba.git"
 
   depends_on "ldc" => :build
