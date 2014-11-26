@@ -1,4 +1,6 @@
 brewer
 ======
+[![Build Status](https://travis-ci.org/saketkc/brewer.svg?branch=libmagic)](https://travis-ci.org/saketkc/brewer)
 
-Homebrew Personal recipes
+Personal recipes
+
