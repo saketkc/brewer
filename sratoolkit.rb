@@ -19,7 +19,7 @@ class Sratoolkit < Formula
 
   depends_on "autoconf" => :build
   depends_on "libxml2" => :recommended
-  depends_on "libmagic" => :recommended
+  #depends_on "libmagic" => :recommended
   depends_on "hdf5" => :recommended
   
   def install
