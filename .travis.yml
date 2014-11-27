@@ -1,7 +1,7 @@
 language: java
 
 before_install:
- - sudo apt-get -y install build-essential git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev libmagic-dev libhdf5-serial-dev libxml2 libxml2-dev automake
+ - sudo apt-get -y install build-essential git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev libmagic-dev
    #- sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
    #- sudo apt-get update -qq
    #- sudo apt-get install -y libyajl-dev libxml2-dev libxqilla-dev
@@ -13,8 +13,10 @@ before_install:
  - export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
  - export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
  - echo -ne '\n' | ruby -e "$(wget -O- https://raw.github.com/Homebrew/linuxbrew/go/install)"
+ - brew doctor
  - brew tap homebrew/science
  - brew tap homebrew/dupes
+ - brew install automake autoconf
    #- brew install automake bzip2 coreutils findutils gawk gnu-sed gnu-which grep libpng libxml2 libxslt make ncurses readline
 
 install:
