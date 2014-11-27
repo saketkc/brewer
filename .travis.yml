@@ -22,6 +22,6 @@ before_install:
    #- brew install automake bzip2 coreutils findutils gawk gnu-sed gnu-which grep libpng libxml2 libxslt make ncurses readline
 
 install:
-    - brew install libmagic.rb
+    - brew install libmagic.rb -v
 script:
     - brew test libmagic.rb
