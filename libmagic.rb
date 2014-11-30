@@ -30,6 +30,7 @@ class Libmagic < Formula
   end
 
   def install
+    ENV.deparallelize
     ENV.universal_binary if build.universal?
 
     # Clean up "src/magic.h" as per http://bugs.gw.com/view.php?id=330
