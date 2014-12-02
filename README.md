@@ -4,4 +4,5 @@ brewer
 
 Personal recipes.
 Test mode ON
+MIT License
 
