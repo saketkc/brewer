@@ -9,6 +9,6 @@ before_install:
  - brew tap homebrew/science
 
 install:
-    - brew install opencv.rb -v
+    - brew install opencv.rb
 script:
-    - brew test opencv.rb -v
+    - brew test opencv.rb
