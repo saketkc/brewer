@@ -2,22 +2,12 @@ language: java
 
 before_install:
  - sudo apt-get -y install build-essential git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev libmagic-dev libhdf5-serial-dev libxml2 libxml2-dev automake
- - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
- - sudo apt-get update -qq
- - sudo apt-get install -y libyajl-dev libxml2-dev libxqilla-dev
- - sudo apt-get install -y libstdc++-4.9-dev
- - sudo apt-get install -y g++-4.9 
- - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 90
- - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 90
- - export PATH="$HOME/.linuxbrew/bin:$PATH"
  - export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
  - export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
  - echo -ne '\n' | ruby -e "$(wget -O- https://raw.github.com/Homebrew/linuxbrew/go/install)"
  - brew tap homebrew/science
- - brew tap homebrew/dupes
-   #- brew install automake bzip2 coreutils findutils gawk gnu-sed gnu-which grep libpng libxml2 libxslt make ncurses readline
 
 install:
-    - for f in *.rb; do brew install "$f" -; done
+    - brew install opencv.rb -v
 script:
-    - for f in *.rb; do brew test "$f"; done
+    - brew test opencv.rb -v
