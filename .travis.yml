@@ -10,6 +10,7 @@ before_install:
  - brew install cmake > cmake.log
 
 install:
-    - brew install -v --quieter opencv.rb
+    - brew install -v --quieter opencv.rbi
+    - export PYTHONPATH="$HOME/.linuxbrew/Cellar/opencv/2.4.9/lib/python2.7/site-packages"
 script:
-    - brew test opencv.rb
+    - python -c "import cv"
