@@ -18,9 +18,9 @@ class Sratoolkit < Formula
   end
 
   depends_on "autoconf" => :build
-  depends_on "libxml2" => :recommended
-  #depends_on "libmagic" => :recommended
-  depends_on "hdf5" => :recommended
+  depends_on "libxml2"
+  depends_on "libmagic"
+  depends_on "hdf5"
   
   def install
     ENV.deparallelize
