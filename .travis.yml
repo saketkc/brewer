@@ -19,6 +19,6 @@ before_install:
  - brew install automake bzip2 coreutils make m4 perl
 
 install:
-    - brew install boost149.rb
+    - brew install boost149.rb -v
 script:
     - brew test boost149.rb
