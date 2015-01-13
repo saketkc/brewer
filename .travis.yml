@@ -1,24 +1,42 @@
-language: java
+language: ruby
+install:
+ - jdk_switcher use oraclejdk7
+ # Warning: Setting DYLD_* vars can break dynamic linking.
+ - unset DYLD_LIBRARY_PATH
+ # Warning: You have a non-Homebrew 'pkg-config' in your PATH
+ - sudo rm -f /usr/bin/pkg-config
+ # Warning: "config" scripts exist outside your system or Homebrew directories.
+ - sudo rm -f /usr/local/clang-3.4/bin/llvm-config
 
-before_install:
- - sudo apt-get -y install build-essential git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev libmagic-dev libhdf5-serial-dev libxml2 libxml2-dev 
+ # Install gcc-4.9 system wide[Default is gcc-4.6]
  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
  - sudo apt-get update -qq
  - sudo apt-get install -y libyajl-dev libxml2-dev libxqilla-dev
  - sudo apt-get install -y libstdc++-4.9-dev
- - sudo apt-get install -y g++-4.9 
+ - sudo apt-get install -y g++-4.9 gfortran-4.9
  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 90
  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 90
- - export PATH="$HOME/.linuxbrew/bin:$PATH"
- - export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
- - export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
- - echo -ne '\n' | ruby -e "$(wget -O- https://raw.github.com/Homebrew/linuxbrew/go/install)"
- - brew tap homebrew/science
- - export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
- - brew tap homebrew/dupes
- - brew install automake bzip2 coreutils make m4 perl
+ - sudo update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-4.9 90
+ - cd ..
+ - git clone https://github.com/Homebrew/linuxbrew.git
+ - PATH=$PWD/linuxbrew/bin:$PATH
 
-install:
-    - brew install boost149.rb -v
+  # Symlink gcc, gfortran
+ - ln -s $(which gcc) $PWD/linuxbrew/bin/gcc-$(gcc -dumpversion |cut -d. -f1,2)
+ - ln -s $(which g++) $PWD/linuxbrew/bin/g++-$(g++ -dumpversion |cut -d. -f1,2)
+ - ln -s $(which gfortran) $PWD/linuxbrew/bin/gfortran-$(gfortran -dumpversion |cut -d. -f1,2)
+
+ # Install pkg-config[See: https://github.com/Homebrew/brewer/pull/1664#issuecomment-69259072]
+ - brew install pkg-config
+
+ - mkdir -p linuxbrew/Library/Taps/homebrew
+ - mv brewer linuxbrew/Library/Taps/homebrew/
+ - cd linuxbrew/Library/Taps/homebrew/brewer
+ - brew tap --repair
+
+ # Incorrect file permissions: chmod 644
+ - chmod 644 *.rb
 script:
-    - brew test boost149.rb
+ - bash travisCI/travis.sh
+notifications:
+ email: false
