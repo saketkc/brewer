@@ -30,7 +30,7 @@ install:
  - brew install pkg-config
 
  - mkdir -p linuxbrew/Library/Taps/homebrew
- - brew tap homebrew-science
+ - brew tap homebrew/homebrew-science
  - mv brewer linuxbrew/Library/Taps/homebrew/
  - cd linuxbrew/Library/Taps/homebrew/brewer
  - brew tap --repair
