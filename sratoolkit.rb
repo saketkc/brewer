@@ -1,5 +1,3 @@
-require "formula"
-
 class Sratoolkit < Formula
   homepage "https://github.com/ncbi/sra-tools/archive/2.4.2-3.tar.gz"
   version "2.4.2-3"
@@ -9,7 +7,7 @@ class Sratoolkit < Formula
 
   resource "ngs-sdk" do
     url "https://github.com/ncbi/ngs/archive/1.0.0.tar.gz"
-    sha1 "3356d4c1da43772740436b116ab0fe53eb6749d8"
+    sha1 "96b26e5f046a46b0f4a2639a310a22abc5b1204c"
   end
 
   resource "ncbi-vdb" do
@@ -21,7 +19,7 @@ class Sratoolkit < Formula
   depends_on "libxml2"
   depends_on "libmagic"
   depends_on "hdf5"
-  
+
   def install
     ENV.deparallelize
     resource("ngs-sdk").stage do
