@@ -32,14 +32,11 @@ changed_files=("boost149.rb" "sratoolkit.rb")
 for file in "${changed_files[@]}"
 do
     echo "Building file: $file"
-    if [[ ${file: -3} == ".rb" ]]
-    then
-        # Dump output of building dependencies to log file
-        brew reinstall $(brew deps $file) >> $BUILD_OUTPUT 2>&1
-        # Explicitly print the verbose output of test-bot
-        brew install $file -v
-        brew uninstall $file
-    fi
+    # Dump output of building dependencies to log file
+    brew reinstall $(brew deps $file) >> $BUILD_OUTPUT 2>&1
+    # Explicitly print the verbose output of test-bot
+    brew install $file -v
+    brew uninstall $file
 done
 
 
