@@ -26,7 +26,7 @@ trap 'error_handler' ERR
 bash -c "while true; do echo \ $(date) - building ...; sleep $PING_SLEEP; done" &
 PING_LOOP_PID=$!
 
-changed_files=("boost149.rb" "sratoolkit.rb")
+changed_files=("sratoolkit.rb")
 
 # Check individual files ending in ".rb"
 for file in "${changed_files[@]}"
