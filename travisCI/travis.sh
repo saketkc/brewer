@@ -35,7 +35,7 @@ do
     # Dump output of building dependencies to log file
     brew install $(brew deps $file) >> $BUILD_OUTPUT 2>&1
     # Explicitly print the verbose output of test-bot
-    brew install $file -v
+    brew install $file -v >> $BUILD_OUTPUT 2>&1
     brew uninstall $file
 done
 
