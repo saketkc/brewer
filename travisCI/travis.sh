@@ -33,7 +33,7 @@ for file in "${changed_files[@]}"
 do
     echo "Building file: $file"
     # Dump output of building dependencies to log file
-    brew reinstall $(brew deps $file) >> $BUILD_OUTPUT 2>&1
+    brew install $(brew deps $file) >> $BUILD_OUTPUT 2>&1
     # Explicitly print the verbose output of test-bot
     brew install $file -v
     brew uninstall $file
