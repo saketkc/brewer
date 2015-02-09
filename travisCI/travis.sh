@@ -26,18 +26,11 @@ trap 'error_handler' ERR
 bash -c "while true; do echo \ $(date) - building ...; sleep $PING_SLEEP; done" &
 PING_LOOP_PID=$!
 
-changed_files=("sratoolkit.rb")
 
 # Check individual files ending in ".rb"
-for file in "${changed_files[@]}"
-do
-    echo "Building file: $file"
-    # Dump output of building dependencies to log file
-    brew install $(brew deps $file) >> $BUILD_OUTPUT 2>&1
-    # Explicitly print the verbose output of test-bot
-    brew install $file -v >> $BUILD_OUTPUT 2>&1
-    brew uninstall $file
-done
+    brew install armadillo.rb --with-hdf5 -v >> $BUILD_OUTPUT 2>&1
+    brew install mlpack.rb --with-hdf5 -v >> $BUILD_OUTPUT 2>&1
+
 
 
 # The build was successful dump the output
