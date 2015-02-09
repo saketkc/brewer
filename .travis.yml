@@ -18,7 +18,8 @@ before_install:
  - export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
  - export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
  - echo -ne '\n' | ruby -e "$(wget -O- https://raw.github.com/Homebrew/linuxbrew/go/install)"
- - brew install automake bzip2 coreutils findutils gawk gnu-sed gnu-which grep libpng libxml2 libxslt make ncurses readline
+   #- brew tap homebrew/dupes
+   #- brew install automake bzip2 coreutils findutils gawk gnu-sed gnu-which grep libpng libxml2 libxslt make ncurses readline
 
 install:
     #- for f in *.rb; do brew install "$f"; done
