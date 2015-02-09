@@ -18,15 +18,13 @@ before_install:
  - export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
  - export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
  - echo -ne '\n' | ruby -e "$(wget -O- https://raw.github.com/Homebrew/linuxbrew/go/install)"
- - brew tap homebrew/science
- - brew tap homebrew/dupes
-   #- brew install automake bzip2 coreutils findutils gawk gnu-sed gnu-which grep libpng libxml2 libxslt make ncurses readline
+ - brew install automake bzip2 coreutils findutils gawk gnu-sed gnu-which grep libpng libxml2 libxslt make ncurses readline
 
 install:
     #- for f in *.rb; do brew install "$f"; done
     #- export PYTHONPATH="$HOME/.linuxbrew/Cellar/opencv/2.4.9/lib/python2.7/site-packages"
     #- brew install libmagic.rb
-    - brew install libmagic.rb -v
+    - brew install mlpack.rb -v
 script:
     - echo "done"
     #- brew test methpipe.rb
