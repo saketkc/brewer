@@ -39,7 +39,7 @@ install:
  # Incorrect file permissions: chmod 644
  - chmod 644 *.rb
 script:
- - brew list
+ - brew install boost
     #- bash travisCI/travis.sh
 
 notifications:
