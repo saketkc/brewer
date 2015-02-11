@@ -30,12 +30,12 @@ install:
  - brew install pkg-config
 
  - mkdir -p linuxbrew/Library/Taps/homebrew
+ - mkdir -p linuxbrew/Cellar/gcc
+ - ls -1 linuxbrew/Cellar/
  - brew tap homebrew/homebrew-science
  - mv brewer linuxbrew/Library/Taps/homebrew/
  - cd linuxbrew/Library/Taps/homebrew/brewer
  - brew tap --repair
- - mkdir -p $PWD/linuxbrew/Cellar/gcc
- - ls -1 $PWD/linuxbrew/Cellar/
  # Incorrect file permissions: chmod 644
  - chmod 644 *.rb
 script:
