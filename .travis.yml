@@ -34,6 +34,7 @@ install:
  - mv brewer linuxbrew/Library/Taps/homebrew/
  - cd linuxbrew/Library/Taps/homebrew/brewer
  - brew tap --repair
+ - mkdir -p ~/.linuxbrew/Cellar/gcc
 
  # Incorrect file permissions: chmod 644
  - chmod 644 *.rb
