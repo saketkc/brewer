@@ -10,7 +10,7 @@ install:
 
    # Install gcc-4.9 system wide[Default is gcc-4.6]
    #- sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-   #- sudo apt-get update -qq
+ - sudo apt-get update -qq && sudo apt-get upgrade -y
    #- sudo apt-get install -y libyajl-dev libxml2-dev libxqilla-dev
    #- sudo apt-get install -y libstdc++-4.9-dev
  - sudo apt-get install -y gfortran
