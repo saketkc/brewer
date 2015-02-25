@@ -30,6 +30,7 @@ class Shogun < Formula
   option "with-brewed-numpy", "Build with Homebrew-packaged numpy"
   option "with-brewed-matplotlib", "Build with Homebrew-packaged matplotlib"
 
+  depends_on "protobuf"
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "hdf5" => :recommended
