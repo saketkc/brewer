@@ -27,7 +27,7 @@ bash -c "while true; do echo \ $(date) - building ...; sleep $PING_SLEEP; done" 
 PING_LOOP_PID=$!
 
 changed_files=("shogun.rb")
-options=("--with-brewed-matplotlib","--with-brewed-numpy","--with-csharp-modular","--with-java-modular","--with-lua-modular","--with-lua-static","--with-matlab-static","--with-octave-modular","--with-octave-static","--with-python-modular","--with-python-static","--with-r-modular","--with-r-static","--with-tests")
+options=("--with-brewed-matplotlib" "--with-brewed-numpy" "--with-csharp-modular" "--with-java-modular" "--with-lua-modular" "--with-lua-static" "--with-matlab-static" "--with-octave-modular" "--with-octave-static" "--with-python-modular" "--with-python-static" "--with-r-modular" "--with-r-static" "--with-tests")
 
 # Check individual files ending in ".rb"
 file="shogun.rb"
