@@ -51,7 +51,18 @@ class Shogun < Formula
   depends_on "octave" if build.with?("octave-static") || build.with?("octave-modular")
   depends_on "python" if build.with?("brewed-numpy") || build.with?("brewed-matplotlib")
 
+   resource "jinja2" do
+       url "https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.7.1.tar.gz"
+             sha1 "a9b24d887f2be772921b3ee30a0b9d435cffadda"
+               end
   def install
+    jinja2_dir = prefix/"jinja2"
+    jinja2_site = jinja2_dir/"lib/python2.7/site-packages"
+    jinja2_site.mkpath
+    ENV.prepend_create_path "PYTHONPATH", jinja2_site
+    resource("jinja2").stage {quiet_system "python2.7", "setup.py", "install", "--prefix=#{jinja2_dir}"}
+    ENV.prepend_path "PATH", jinja2_dir/"bin"
+
     args = std_cmake_args
     args << "-DENABLE_TESTING=ON"
     args << "-DCmdLineStatic=ON" if build.with? "cmd-static"
