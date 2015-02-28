@@ -8,17 +8,17 @@ install:
  # Warning: "config" scripts exist outside your system or Homebrew directories.
  - sudo rm -f /usr/local/clang-3.4/bin/llvm-config
 
-   # Install gcc-4.8 system wide[Default is gcc-4.6]
+   # Install gcc-4.7 system wide[Default is gcc-4.6]
  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
  - sudo apt-get update -qq #&& sudo apt-get upgrade -y
  - sudo apt-get install -y libyajl-dev libxml2-dev libxqilla-dev
- - sudo apt-get install -y libstdc++-4.8-dev
- - sudo apt-get install -y g++-4.8 gfortran-4.8
+ - sudo apt-get install -y libstdc++-4.7-dev
+ - sudo apt-get install -y g++-4.7 gfortran-4.7
  - sudo apt-get install -y libblas-dev liblapack-dev python-pip
  - sudo pip install jinja2
- - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 90
- - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 90
- - sudo update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-4.8 90
+ - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.7 90
+ - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.7 90
+ - sudo update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-4.7 90
  - cd ..
  - git clone https://github.com/Homebrew/linuxbrew.git
  - PATH=$PWD/linuxbrew/bin:$PATH
@@ -27,8 +27,8 @@ install:
  - ln -s $(which gcc) $PWD/linuxbrew/bin/gcc-$(gcc -dumpversion |cut -d. -f1,2)
  - ln -s $(which g++) $PWD/linuxbrew/bin/g++-$(g++ -dumpversion |cut -d. -f1,2)
  - ln -s $(which gfortran) $PWD/linuxbrew/bin/gfortran-$(gfortran -dumpversion |cut -d. -f1,2)
- - mkdir -p $PWD/linuxbrew/Cellar/gcc/4.8.2_1
- - touch $PWD/linuxbrew/Cellar/gcc/4.8.2_1/test.txt
+ - mkdir -p $PWD/linuxbrew/Cellar/gcc/4.7.2_1
+ - touch $PWD/linuxbrew/Cellar/gcc/4.7.2_1/test.txt
 
  # Install pkg-config[See: https://github.com/Homebrew/brewer/pull/1664#issuecomment-69259072]
  - brew install pkg-config
