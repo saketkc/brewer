@@ -14,7 +14,7 @@ install:
  - sudo apt-get install -y libyajl-dev libxml2-dev libxqilla-dev
  - sudo apt-get install -y libstdc++-4.8-dev
  - sudo apt-get install -y g++-4.8 gfortran-4.8
- - sudo apt-get install -y libblas-dev liblapack-dev python-pip
+ - sudo apt-get install -y libblas-dev liblapack-dev python-pip cmake
  - sudo pip install jinja2
  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 90
  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 90
@@ -29,6 +29,7 @@ install:
  - ln -s $(which gfortran) $PWD/linuxbrew/bin/gfortran-$(gfortran -dumpversion |cut -d. -f1,2)
  - mkdir -p $PWD/linuxbrew/Cellar/gcc/4.8.2_1
  - touch $PWD/linuxbrew/Cellar/gcc/4.8.2_1/test.txt
+ - touch $PWD/linuxbrew/Cellar/cmake/3.1.1_1/test.txt
 
  # Install pkg-config[See: https://github.com/Homebrew/brewer/pull/1664#issuecomment-69259072]
  - brew install pkg-config
