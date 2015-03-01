@@ -31,7 +31,12 @@ options=("--with-brewed-matplotlib" "--with-brewed-numpy" "--with-csharp-modular
 
 # Check individual files ending in ".rb"
 file="shogun.rb"
-brew install $(brew deps $file) >> $BUILD_OUTPUT 2>&1
+dependencies=`brew deps $file`
+for dependency in $dependencies
+do
+    echo "Building Dependency: $dependency"
+    brew install $dependency >> $BUILD_OUTPUT 2>&1
+done
 
 for option in "${options[@]}"
 do
