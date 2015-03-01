@@ -50,7 +50,7 @@ class Shogun < Formula
   depends_on "lua" if build.with?("lua-static") || build.with?("lua-modular")
   depends_on "octave" if build.with?("octave-static") || build.with?("octave-modular")
   depends_on "python" if build.with?("brewed-numpy") || build.with?("brewed-matplotlib")
-
+  depends_on "jblas" if build.with?("java-modular")
    resource "jinja2" do
        url "https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.7.1.tar.gz"
              sha1 "a9b24d887f2be772921b3ee30a0b9d435cffadda"
