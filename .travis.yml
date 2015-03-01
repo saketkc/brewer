@@ -23,7 +23,7 @@ install:
  - cd ..
  - git clone https://github.com/Homebrew/linuxbrew.git
  - PATH=$PWD/linuxbrew/bin:$PATH
- - sudo apt-get install  libbz2-dev cdbs libarpack2-dev libatlas-base-dev libblas-dev libglpk-dev libhdf5-serial-dev zlib1g-dev libxml2-dev libreadline6-dev libreadline-dev libsnappy-dev liblzo2-dev liblzma-dev liblapack-dev libeigen3-dev libjson-c-dev libnlopt-dev gdb cmake python-jinja2
+ - sudo apt-get install  libbz2-dev cdbs libarpack2-dev libatlas-base-dev libblas-dev libglpk-dev libhdf5-serial-dev zlib1g-dev libxml2-dev libreadline6-dev libreadline-dev libsnappy-dev liblzo2-dev liblzma-dev liblapack-dev libeigen3-dev gdb cmake python-jinja2
 
   # Symlink gcc, gfortran
  - ln -s $(which gcc) $PWD/linuxbrew/bin/gcc-$(gcc -dumpversion |cut -d. -f1,2)
